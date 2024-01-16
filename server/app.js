@@ -31,10 +31,12 @@ if (process.env.NODE_ENV === "production") {
 } else if(process.env.NODE_ENV === "development") {
     var corsOptions = {
         origin: "http://localhost:3000",
-        optionsSuccessStatus: 200,
+        optionsSuccessStatus: 200
     };
     app.use(cors(corsOptions));
 }
+
+app.use(cors({origin: "http://localhost:3000", optionsSuccessStatus: 200}))
 
 app.post("/api/book/", (req, res) => {
     const {author, name, pages} = req.body;
