@@ -66,8 +66,5 @@ app.get("/book/:name", (req, res) => {
     });
 })
 
-app.listen(port, () => {
-    console.log("Server listen!")
-})
 
 module.exports = app;
